@@ -17,12 +17,6 @@ packages = [
     "github3.search",
 ]
 
-SNI_requirements = [
-    'pyOpenSSL',
-    'ndg-httpsclient',
-    'pyasn1'
-]
-
 kwargs['tests_require'] = ['betamax >=0.2.0', 'pytest',
                            'betamax-matchers>=0.1.0']
 if sys.version_info < (3, 0):
@@ -62,7 +56,7 @@ class PyTest(TestCommand):
         sys.exit(errno)
 
 setup(
-    name="github3.py",
+    name="njdister-github3.py",
     version=__version__,
     description=("Python wrapper for the GitHub API"
                  "(http://developer.github.com/v3)"),
@@ -90,7 +84,6 @@ setup(
     ],
     extras_require={
         'test': kwargs['tests_require'],
-        'sni': SNI_requirements,
     },
     cmdclass={'test': PyTest},
     **kwargs
